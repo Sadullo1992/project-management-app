@@ -1,0 +1,40 @@
+<section class="full-height center">
+  <div class="form__container">
+    <h2 class="form__title">{{ "HOME.USERNAV.EDIT_PROFILE" | translate | titlecase }}</h2>
+    <form (submit)="onUpdate()" [formGroup]="editProfileForm">
+      <mat-form-field>
+      <mat-label>{{ 'FORM.NAME' | translate}}</mat-label>
+        <input type="text" matInput formControlName="name">
+        <mat-error *ngIf="editProfileForm.get('name')?.errors?.['required']">Name is required</mat-error>
+        <mat-error *ngIf="editProfileForm.get('name')?.errors?.['minlength']">At least 3 characters</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'FORM.LOGIN' | translate}}</mat-label>
+        <input type="text" matInput formControlName="login">
+        <mat-error *ngIf="editProfileForm.get('login')?.errors?.['required']">Login is required</mat-error>
+        <mat-error *ngIf="editProfileForm.get('login')?.errors?.['minlength']">At least 3 characters</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'FORM.PASSWORD' | translate}}</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="editProfileForm.get('password')?.errors?.['required']">Password is required</mat-error>
+        <mat-error *ngIf="editProfileForm.get('password')?.errors?.['passwordInvalid']">Password is easy. Please, select complex one</mat-error>
+      </mat-form-field>
+      <div class="btn__container">
+        <button type="button" mat-raised-button color="primary" (click)="cancel()">{{ 'FORM.CANCEL' | translate}}</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!editProfileForm.valid">{{ 'FORM.UPDATE' | translate}}</button>
+      </div>
+    </form>
+    <button mat-button color="warn" (click)="showConfirmModal()">{{ "HOME.USERNAV.DELETE_PROFILE" | translate }}</button>
+  </div>
+</section>
+
+<div class="modal__conatiner center" #confirm>
+  <div class="modal form__container">
+    <h2 class="form__title">{{ 'FORM.CONFIRM_TITLE' | translate}}</h2>
+    <div class="btn__container">
+      <button type="button" mat-raised-button color="primary" (click)="cancelConfirmation()">{{ 'FORM.CANCEL' | translate}}</button>
+      <button type="button" mat-raised-button color="warn" (click)="deleteProfile()">{{ 'FORM.REMOVE' | translate}}</button>
+    </div>
+  </div>
+</div>

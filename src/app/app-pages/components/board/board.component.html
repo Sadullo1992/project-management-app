@@ -1,0 +1,40 @@
+<app-spinner *ngIf="showSpinner"></app-spinner>
+<section *ngIf="!showSpinner" class="full-height">
+  <div class="board">
+    <a routerLink="/boards" mat-button>
+      <mat-icon color="accent" aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_back_ios_new"></mat-icon>
+      {{ 'BOARD.BACK' | translate }}
+    </a>
+    <h1>{{ boardName }}</h1>
+    <div class="board__container" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+      <app-board-column
+        *ngFor="let item of (columns | sortByOrderColumn)"
+        [item]="item"
+        (deleteColumn)="onDeleteColumn($event)"
+        (editColumn)="onEditColumn($event)"
+        cdkDrag
+      >
+      </app-board-column>
+      <div class="board__column">
+        <button class="add_col_btn" mat-button (click)="showCreateColumnModal()">{{ 'BOARD.ADD_NEW_COL' | translate }}</button>
+      </div>
+    </div>x
+  </div>
+</section>
+
+<div class="modal__conatiner center" #createColumn>
+  <div class="modal form__container">
+    <h2 class="form__title">{{ 'BOARD.CREATE_NEW_COL' | translate }}</h2>
+    <form (submit)="onCreateColumn(ngForm)" #ngForm="ngForm" [formGroup]="createColumnForm">
+      <mat-form-field>
+        <mat-label>{{ 'FORM.TITLE' | translate }}</mat-label>
+        <input matInput type="text" formControlName="title">
+        <mat-error *ngIf="createColumnForm.get('title')?.errors?.['required']">Title is required</mat-error>
+      </mat-form-field>
+      <div class="btn__container">
+        <button type="button" mat-raised-button color="primary" (click)="cancelCreateColumn()">{{ 'FORM.CANCEL' | translate }}</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!createColumnForm.valid">{{ 'FORM.CREATE' | translate }}</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div class="board__column">
+  <h3><span (click)="showEditColumnModal()">{{ item.title }}</span></h3>
+  <form (submit)="edit()" [formGroup]="editColumnForm" class="form__container title__edit__form" #editColumnTitle>
+    <input type="text" formControlName="columnTitle">
+    <mat-error *ngIf="editColumnForm.get('columnTitle')?.errors?.['required']">Title is required</mat-error>
+    <div class="btn__container">
+      <button type="button" mat-raised-button color="primary" (click)="cancelEditColumn()">{{ 'FORM.CANCEL' | translate }}</button>
+      <button type="submit" mat-raised-button color="primary" [disabled]="!editColumnForm.valid">{{ 'FORM.UPDATE' | translate }}</button>
+    </div>
+  </form>
+  <button class="add_task_btn" mat-button (click)="showCreateTaskModal()">{{ 'BOARD.ADD_TASK' | translate }}</button>
+  <div class="board__task__container" cdkDropList (cdkDropListDropped)="drop($event)">
+    <app-board-task
+      *ngFor="let task of (tasks | sortByOrder)"
+      [task]="task"
+      (onDelete)="onDeleteTask($event)"
+      (click)="editTask(task.id)"
+      cdkDrag
+    ></app-board-task>
+  </div>
+  <button class="remove_col_btn" mat-raised-button color="warn" (click)="showConfirmModal()">{{ 'BOARD.DELETE_COL' | translate }}</button>
+</div>
+
+<div class="modal__conatiner center" #confirmDeleteColumn>
+  <div class="modal form__container">
+    <h2 class="form__title">{{ 'FORM.CONFIRM_TITLE' | translate }}</h2>
+    <div class="btn__container">
+      <button type="button" mat-raised-button color="primary" (click)="cancelConfirmation()">{{ 'FORM.CANCEL' | translate }}</button>
+      <button type="button" mat-raised-button color="warn" (click)="delete()">{{ 'FORM.REMOVE' | translate }}</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal__conatiner center" #createTask>
+  <div class="modal form__container">
+    <h2 class="form__title">{{ isEdit ? ('BOARD.UPDATE_TASK' | translate) : ('BOARD.CREATE_TASK' | translate)}}</h2>
+    <form (submit)="isEdit ? onEditTask(ngForm) : onCreateTask(ngForm)" #ngForm="ngForm" [formGroup]="taskForm">
+      <mat-form-field>
+        <mat-label>{{ 'FORM.TITLE' | translate }}</mat-label>
+        <input matInput type="text" formControlName="title">
+        <mat-error *ngIf="taskForm.get('title')?.errors?.['required']">Title is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'FORM.DESCRIPTION' | translate }}</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+        <mat-error *ngIf="taskForm.get('description')?.errors?.['required']">Description is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'FORM.CHOOSE_USER' | translate }}</mat-label>
+        <mat-select formControlName="userId">
+          <mat-option *ngFor="let user of users" [value]="user.id">
+            {{user.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <div class="btn__container">
+        <button type="button" mat-raised-button color="primary" (click)="cancelCreateTask()">Cancel</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!taskForm.valid">{{ isEdit ? ('FORM.UPDATE' | translate) : ('FORM.CREATE' | translate) }}</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+{
+  "HOME": {
+    "TITLE": "Home",
+    "USERNAV": {
+      "BOARDS": "Boards",
+      "EDIT_PROFILE": "Edit profile",
+      "LOGOUT":"Logout",
+      "DELETE_PROFILE": "Delete profile"
+    },
+    "HOMENAV": {
+      "TEAM": "Team",
+      "ABOUT": "About",
+      "LOG_IN": "Log in",
+      "SIGN_IN": "Sign in",
+      "SIGN_UP": "Sign up"
+    },
+    "INTRO__TITLE": "Welcome to Project Management Application",
+    "INTRO__TEXT": "Bring your teammates to optimize the work process, improve efficiency and bring your results to the new level!",
+    "TEAM__TITLE": "Our Team",
+    "CARD_POS_1": "Frontend Developer",
+    "CARD_POS_2": "UX/UI Designer",
+    "CARD_TEXT_1": "Hi! I am a team leader. Now I'll tell you a little about what I'm doing here. Initially, I worked with Header and Footer, then I created a page with a board, and also set up NgRx and created a user session. Helped a little with the welcome page.",
+    "CARD_PORTFOLIO": "Portfolio",
+    "ABOUT_TITLE": "About Course",
+    "ABOUT_SUBTITLE": "Javascript/Front-end Mentoring Program (in English)",
+    "ABOUT_TEXT": "The program consists of 3 stages. There may be requirements for advancing to each higher stage, which will be described below. This specific run of the program will take the form of self-study. This means that you will have access to pre-recorded webinars, recommended materials, and weekly live Q&A sessions with our mentors/coordinators to answer any questions you might have. You will also have the ability to communicate with other students and help each other solve any problems you might face. We will provide you with a list of topics that should be covered for each stage with recommended deadlines, but you will have the freedom to choose when you want to watch the lectures and complete the tasks. BE AWARE that practical tasks’ deadlines are not suggestions, and should be respected.",
+    "ABOUT_ENROLL": "Enroll"
+  },
+  "FORM": {
+    "NAME": "Name",
+    "LOGIN": "Login",
+    "PASSWORD": "Password",
+    "CANCEL": "Cancel",
+    "UPDATE": "Update",
+    "CONFIRM_TITLE": "Are you sure to remove?",
+    "REMOVE": "Remove",
+    "SIGNUP_REDIRECT_TEXT": "Do you already have an account?",
+    "SIGNIN_REDIRECT_TEXT": "Do you not have an account?",
+    "TITLE": "Title",
+    "DESCRIPTION": "Description",
+    "CREATE": "Create",
+    "EDIT": "Edit",
+    "CHOOSE_USER": "Choose User"
+  },
+  "BOARDS": {
+    "TITLE": "Boards",
+    "ADD_NEW": "+ Add New Board",
+    "CREATE_NEW": "Create New Board",
+    "EDIT": "Edit Board"
+  },
+  "BOARD": {
+    "BACK": "Back to Board",
+    "ADD_NEW_COL": "+ Add New Column",
+    "CREATE_NEW_COL": "Create New Column",
+    "ADD_TASK": "+ Add Task",
+    "DELETE_COL": "Delete Column",
+    "CREATE_TASK": "Create New Task",
+    "UPDATE_TASK": "Update Task",
+    "TASK_OWNER": "Task owner:"
+  }
+}

@@ -1,0 +1,13 @@
+.boards__item {
+  width: 300px;
+  cursor: pointer;
+}
+.boards__card {
+  background-color: #80DEEA;
+}
+
+@media (max-width: 767px) {
+  .boards__item {
+    width: 280px;
+  }
+}

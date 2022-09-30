@@ -1,0 +1,12 @@
+<div class="user__nav">
+  <a mat-button [routerLink]="['boards']" class="nav__link" (click)="closeNav()">{{ 'HOME.USERNAV.BOARDS' | translate}}</a>
+<span class="user__avatar" [matMenuTriggerFor]="user">
+  <span class="user__avatar__name">{{ currentUserData.name }}</span>
+  <div mat-card-avatar class="user__avatar__photo"></div>
+</span>
+<mat-menu #user="matMenu">
+  <a mat-menu-item [routerLink]="['/edit-profile']" routerLinkActive="active" (click)="closeNav()">{{ 'HOME.USERNAV.EDIT_PROFILE' | translate }}</a>
+  <a mat-menu-item (click)="logoutUser()">{{ 'HOME.USERNAV.LOGOUT' | translate }}</a>
+</mat-menu>
+
+</div>

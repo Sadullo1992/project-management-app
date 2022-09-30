@@ -1,0 +1,9 @@
+<div class="home__nav">
+  <a mat-button href="#team" class="nav__link" (click)="closeNav()">{{ 'HOME.HOMENAV.TEAM' | translate}}</a>
+  <a mat-button href="#about" class="nav__link" (click)="closeNav()">{{ 'HOME.HOMENAV.ABOUT' | translate}}</a>
+  <button mat-flat-button [matMenuTriggerFor]="login">{{ 'HOME.HOMENAV.LOG_IN' | translate}}</button>
+  <mat-menu #login="matMenu">
+    <a mat-menu-item [routerLink]="['login']" routerLinkActive="active" (click)="closeNav()">{{ 'HOME.HOMENAV.SIGN_IN' | translate}}</a>
+    <a mat-menu-item [routerLink]="['sign-up']" routerLinkActive="active" (click)="closeNav()">{{ 'HOME.HOMENAV.SIGN_UP' | translate}}</a>
+  </mat-menu>
+</div>

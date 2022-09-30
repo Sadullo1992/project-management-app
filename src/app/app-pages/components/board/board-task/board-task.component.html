@@ -1,0 +1,18 @@
+<div class="board__task">
+  <h4 class="board__task__title">{{ task.title }}</h4>
+  <p class="board__task__desc">{{ task.description }}</p>
+  <p class="board__task__owner">{{ 'BOARD.TASK_OWNER' | translate }} <span>{{ user?.name }}</span></p>
+  <button class="board__task__delete__btn" appClickStopPropagation (click)="showConfirmModal()">
+    <mat-icon color="warn" aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+  </button>
+</div>
+
+<div class="modal__conatiner center" appClickStopPropagation #confirmDeleteTask>
+  <div class="modal form__container">
+    <h2 class="form__title">{{ 'FORM.CONFIRM_TITLE' | translate }}</h2>
+    <div class="btn__container">
+      <button type="button" mat-raised-button color="primary" (click)="cancelConfirmation()">{{ 'FORM.CANCEL' | translate }}</button>
+      <button type="button" mat-raised-button color="warn" (click)="delete()">{{ 'FORM.REMOVE' | translate }}</button>
+    </div>
+  </div>
+</div>

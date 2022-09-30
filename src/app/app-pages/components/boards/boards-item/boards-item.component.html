@@ -1,0 +1,46 @@
+<div class="boards__item">
+  <mat-card class="boards__card">
+    <mat-card-title>{{ item?.title }}</mat-card-title>
+    <mat-card-subtitle>{{ item?.description }}</mat-card-subtitle>
+    <mat-card-actions align="end">
+      <button mat-button appClickStopPropagation (click)="showEditBoardModal()">
+        <mat-icon color="accent" aria-hidden="false" aria-label="Example home icon" fontIcon="edit"></mat-icon>
+      </button>
+      <button mat-button appClickStopPropagation (click)="showConfirmModal()">
+        <mat-icon color="warn" aria-hidden="false" aria-label="Example home icon" fontIcon="delete"></mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<div class="modal__conatiner center" appClickStopPropagation #editBoardRef>
+  <div class="modal form__container">
+    <h2 class="form__title">{{ 'BOARDS.EDIT' | translate }}</h2>
+    <form (submit)="edit(ngForm)" #ngForm="ngForm" [formGroup]="editBoardForm">
+      <mat-form-field>
+        <mat-label>{{ 'FORM.TITLE' | translate }}</mat-label>
+        <input matInput type="text" formControlName="title">
+        <mat-error *ngIf="editBoardForm.get('title')?.errors?.['required']">Title is required</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'FORM.DESCRIPTION' | translate }}</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+        <mat-error *ngIf="editBoardForm.get('description')?.errors?.['required']">Description is required</mat-error>
+      </mat-form-field>
+      <div class="btn__container">
+        <button type="button" mat-raised-button color="primary" (click)="cancelEditBoard()">{{ 'FORM.CANCEL' | translate }}</button>
+        <button type="submit" mat-raised-button color="primary" [disabled]="!editBoardForm.valid">{{ 'FORM.EDIT' | translate }}</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div class="modal__conatiner center" appClickStopPropagation #confirmDeleteBoard>
+  <div class="modal form__container">
+    <h2 class="form__title">{{ 'FORM.CONFIRM_TITLE' | translate }}</h2>
+    <div class="btn__container">
+      <button type="button" mat-raised-button color="primary" (click)="cancelConfirmation()">{{ 'FORM.CANCEL' | translate }}</button>
+      <button type="button" mat-raised-button color="warn" (click)="delete()">{{ 'FORM.REMOVE' | translate }}</button>
+    </div>
+  </div>
+</div>

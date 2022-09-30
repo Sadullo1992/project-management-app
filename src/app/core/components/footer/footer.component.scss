@@ -1,0 +1,16 @@
+.footer__inner {
+  padding: 0;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+}
+
+.footer__link {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  margin-left: 20px;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}

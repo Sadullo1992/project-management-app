@@ -1,0 +1,85 @@
+.board__column {
+  width: 300px;
+  position: relative;
+  background-color: #f5f5f5;
+  cursor: move;
+  h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    span {
+      cursor: pointer;
+    }
+  }
+  .add_task_btn {
+    width: 100%;
+    border: 1px dashed #3f51b5;
+    color: #3f51b5;
+    border-radius: 0;
+  }
+  .remove_col_btn {
+    width: 100%;
+    border-radius: 0;
+  }
+
+}
+
+.board__task__container {
+  padding: 5px 0 0;
+  width: 300px;
+  height: calc(100vh - 372px);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.title__edit__form {
+  position: absolute;
+  left: 0;
+  top: -5px;
+  padding: 5px 0 0;
+  border-radius: 0;
+  text-align: left;
+  background-color: #ecebeb;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: -2;
+  opacity: 0;
+  &--active {
+    z-index: 5;
+    opacity: 1;
+  }
+  input {
+    font: 400 16px/28px Roboto, "Helvetica Neue", sans-serif;
+    font-size: 19px;
+    font-weight: 400;
+    letter-spacing: normal;
+    margin-bottom: 15px;
+    padding: 0;
+    background-color: #f5f5f5;
+    border: 1px solid #3f51b5;
+    outline: 0;
+    width: 100%;
+  }
+  button {
+    margin-bottom: 15px;
+  }
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+
+
+

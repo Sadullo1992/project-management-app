@@ -1,0 +1,22 @@
+<section class="full-height center">
+  <div class="form__container">
+    <h2 class="form__title">{{ 'HOME.HOMENAV.SIGN_IN' | translate}}</h2>
+    <form (submit)="onLogin(ngForm)" #ngForm="ngForm" [formGroup]="loginForm">
+      <mat-form-field>
+        <mat-label>{{ 'FORM.LOGIN' | translate}}</mat-label>
+        <input matInput type="text" formControlName="login">
+        <mat-error *ngIf="loginForm.get('login')?.errors?.['required']">Login is required</mat-error>
+        <mat-error *ngIf="loginForm.get('login')?.errors?.['minlength']">At least 3 characters</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{ 'FORM.PASSWORD' | translate}}</mat-label>
+        <input matInput type="password" formControlName="password">
+        <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</mat-error>
+        <mat-error *ngIf="loginForm.get('password')?.errors?.['passwordInvalid']">Password is easy. Please, select complex one</mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">{{ 'HOME.HOMENAV.SIGN_IN' | translate}}</button>
+    </form>
+    <p>{{ 'FORM.SIGNIN_REDIRECT_TEXT' | translate}}</p>
+    <button mat-button color="primary" routerLink="/sign-up">{{ 'HOME.HOMENAV.SIGN_UP' | translate}}</button>
+  </div>
+</section>

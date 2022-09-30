@@ -1,0 +1,75 @@
+<section class="intro">
+  <div class="container">
+    <div class="intro__inner">
+      <div class="intro__content">
+        <h1>{{ 'HOME.INTRO__TITLE' | translate }}</h1>
+        <p>{{ 'HOME.INTRO__TEXT' | translate }}</p>
+        <button mat-raised-button color="primary" routerLink="/sign-up">{{ 'HOME.HOMENAV.SIGN_UP' | translate | titlecase}}</button>
+      </div>
+      <img class="intro__photo" src="../../../../assets/intro_photo.jpg" alt="pma">
+    </div>
+  </div>
+</section>
+<section id="team" class="team">
+  <div class="container">
+    <h2 class="team__title">{{ 'HOME.TEAM__TITLE' | translate }}</h2>
+    <div class="team__inner">
+      <mat-card class="team__card">
+        <img mat-card-image src="../../../../assets/my_photo.jpg" alt="my photo">
+        <mat-card-header>
+          <mat-card-title>Sadullo Buriev</mat-card-title>
+          <mat-card-subtitle>{{ 'HOME.CARD_POS_1' | translate }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>{{ 'HOME.CARD_TEXT_1' | translate }}</p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a target="_blank" href="https://sadullo1992.github.io/rsschool-cv/" mat-flat-button color="primary">{{ 'HOME.CARD_PORTFOLIO' | translate }}</a>
+          <a target="_blank" href="https://github.com/Sadullo1992" mat-button color="primary">GitHub</a>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card class="team__card">
+        <img mat-card-image src="../../../../assets/designer.jpg" alt="designer">
+        <mat-card-header>
+          <mat-card-title>Sukhrobjon Khurramov</mat-card-title>
+          <mat-card-subtitle>{{ 'HOME.CARD_POS_2' | translate }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{ 'HOME.CARD_TEXT_1' | translate }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a target="_blank" href="https://instagram.com/suxrobjonxurramov" mat-flat-button color="primary">{{ 'HOME.CARD_PORTFOLIO' | translate }}</a>
+          <a target="_blank" href="https://instagram.com/suxrobjonxurramov" mat-button color="primary">Behance</a>
+        </mat-card-actions>
+      </mat-card>
+      <mat-card class="team__card">
+        <img mat-card-image src="../../../../assets/frontend_dev.jpg" alt="designer">
+        <mat-card-header>
+          <mat-card-title>Ruslanbek Normurodov</mat-card-title>
+          <mat-card-subtitle>{{ 'HOME.CARD_POS_1' | translate }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>
+            {{ 'HOME.CARD_TEXT_1' | translate }}
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <a target="_blank" href="https://github.com/ruslanbek92" mat-flat-button color="primary">{{ 'HOME.CARD_PORTFOLIO' | translate }}</a>
+          <a target="_blank" href="https://github.com/ruslanbek92" mat-button color="primary">GitHub</a>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</section>
+<section id="about" class="about">
+  <div class="container">
+    <h2 class="team__title">{{ 'HOME.ABOUT_TITLE' | translate }}</h2>
+    <h3>{{ 'HOME.ABOUT_SUBTITLE' | translate }}</h3>
+    <p>{{ 'HOME.ABOUT_TEXT' | translate }}</p>
+    <a mat-raised-button color="primary" href="https://rs.school/js-en/" target="_blank">{{ 'HOME.ABOUT_ENROLL' | translate }}</a>
+  </div>
+</section>
+
+

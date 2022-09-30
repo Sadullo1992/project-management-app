@@ -1,0 +1,38 @@
+.user__nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user__avatar {
+  padding-left: 10px;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  border-left: 2px solid #fff;
+  cursor: pointer;
+  gap: 5px;
+  &__name {
+    font-size: 14px;
+    padding: 0;
+    margin: 0;
+    line-height: 0;
+  }
+  &__photo {
+    background-image: url('../../../../../assets/user-avatar.jpg');
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+@media (max-width: 767px) {
+  .user__nav {
+    flex-direction: column;
+  }
+  .user__avatar {
+    border: 2px solid #fff;
+    padding: 5px;
+    margin-top: 5px;
+    box-sizing: border-box;
+  }
+}
