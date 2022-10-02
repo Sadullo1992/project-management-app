@@ -29,7 +29,7 @@
       <mat-form-field>
         <mat-label>{{ 'FORM.TITLE' | translate }}</mat-label>
         <input matInput type="text" formControlName="title">
-        <mat-error *ngIf="createColumnForm.get('title')?.errors?.['required']">Title is required</mat-error>
+        <mat-error *ngIf="createColumnForm.get('title')?.errors?.['required']">{{ 'FORM.ERROR_MESSAGE.TITLE' | translate }}</mat-error>
       </mat-form-field>
       <div class="btn__container">
         <button type="button" mat-raised-button color="primary" (click)="cancelCreateColumn()">{{ 'FORM.CANCEL' | translate }}</button>

@@ -40,7 +40,16 @@
     "DESCRIPTION": "Description",
     "CREATE": "Create",
     "EDIT": "Edit",
-    "CHOOSE_USER": "Choose User"
+    "CHOOSE_USER": "Choose User",
+    "ERROR_MESSAGE": {
+      "LOGIN": "Login is required",
+      "NAME": "Name is required",
+      "AT_LEAST": "At least 3 characters",
+      "PASSWORD": "Password is required",
+      "COMPLEX": "Password is easy. Please, select complex one",
+      "TITLE": "Title is required",
+      "DESCRIPTION": "Description is required"
+    }
   },
   "BOARDS": {
     "TITLE": "Boards",

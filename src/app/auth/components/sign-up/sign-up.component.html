@@ -5,14 +5,14 @@
       <mat-form-field>
         <mat-label>{{ 'FORM.NAME' | translate}}</mat-label>
         <input type="text" matInput formControlName="name">
-        <mat-error *ngIf="signUpForm.get('name')?.errors?.['required']">Name is required</mat-error>
-        <mat-error *ngIf="signUpForm.get('name')?.errors?.['minlength']">At least 3 characters</mat-error>
+        <mat-error *ngIf="signUpForm.get('name')?.errors?.['required']">{{ 'FORM.ERROR_MESSAGE.NAME' | translate }}</mat-error>
+        <mat-error *ngIf="signUpForm.get('name')?.errors?.['minlength']">{{ 'FORM.ERROR_MESSAGE.AT_LEAST' | translate }}</mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>{{ 'FORM.LOGIN' | translate}}</mat-label>
         <input type="text" matInput formControlName="login">
-        <mat-error *ngIf="signUpForm.get('login')?.errors?.['required']">Login is required</mat-error>
-        <mat-error *ngIf="signUpForm.get('login')?.errors?.['minlength']">At least 3 characters</mat-error>
+        <mat-error *ngIf="signUpForm.get('login')?.errors?.['required']">{{ 'FORM.ERROR_MESSAGE.LOGIN' | translate }}</mat-error>
+        <mat-error *ngIf="signUpForm.get('login')?.errors?.['minlength']">{{ 'FORM.ERROR_MESSAGE.AT_LEAST' | translate }}</mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>{{ 'FORM.PASSWORD' | translate}}</mat-label>
@@ -20,8 +20,8 @@
         <button style="margin-bottom: 0;" type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
-        <mat-error *ngIf="signUpForm.get('password')?.errors?.['required']">Password is required</mat-error>
-        <mat-error *ngIf="signUpForm.get('password')?.errors?.['passwordInvalid']">Password is easy. Please, select complex one</mat-error>
+        <mat-error *ngIf="signUpForm.get('password')?.errors?.['required']">{{ 'FORM.ERROR_MESSAGE.PASSWORD' | translate }}</mat-error>
+        <mat-error *ngIf="signUpForm.get('password')?.errors?.['passwordInvalid']">{{ 'FORM.ERROR_MESSAGE.COMPLEX' | translate }}</mat-error>
       </mat-form-field>
       <button type="submit" mat-raised-button color="primary" [disabled]="!signUpForm.valid">{{ 'HOME.HOMENAV.SIGN_UP' | translate}}</button>
     </form>

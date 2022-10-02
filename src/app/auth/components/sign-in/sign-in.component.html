@@ -5,8 +5,8 @@
       <mat-form-field>
         <mat-label>{{ 'FORM.LOGIN' | translate}}</mat-label>
         <input matInput type="text" formControlName="login">
-        <mat-error *ngIf="loginForm.get('login')?.errors?.['required']">Login is required</mat-error>
-        <mat-error *ngIf="loginForm.get('login')?.errors?.['minlength']">At least 3 characters</mat-error>
+        <mat-error *ngIf="loginForm.get('login')?.errors?.['required']">{{ 'FORM.ERROR_MESSAGE.LOGIN' | translate }}</mat-error>
+        <mat-error *ngIf="loginForm.get('login')?.errors?.['minlength']">{{ 'FORM.ERROR_MESSAGE.AT_LEAST' | translate }}</mat-error>
       </mat-form-field>
       <mat-form-field>
         <mat-label>{{ 'FORM.PASSWORD' | translate}}</mat-label>
@@ -14,8 +14,8 @@
         <button style="margin-bottom: 0;" type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
           <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
         </button>
-        <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">Password is required</mat-error>
-        <mat-error *ngIf="loginForm.get('password')?.errors?.['passwordInvalid']">Password is easy. Please, select complex one</mat-error>
+        <mat-error *ngIf="loginForm.get('password')?.errors?.['required']">{{ 'FORM.ERROR_MESSAGE.PASSWORD' | translate }}</mat-error>
+        <mat-error *ngIf="loginForm.get('password')?.errors?.['passwordInvalid']">{{ 'FORM.ERROR_MESSAGE.COMPLEX' | translate }}</mat-error>
       </mat-form-field>
       <button mat-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">{{ 'HOME.HOMENAV.SIGN_IN' | translate}}</button>
     </form>
