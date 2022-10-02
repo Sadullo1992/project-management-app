@@ -1,0 +1,26 @@
+<div class="search">
+  <label for="search"><mat-icon>search</mat-icon></label>
+  <input id="search" type="search" placeholder="{{ 'SEARCH.TITLE' | translate }}" name="search" [(ngModel)]="searchText">
+</div>
+
+<div *ngIf="searchText.length > 0" class="search-tasks__container">
+  <table>
+    <tr>
+      <th>{{ 'SEARCH.NO' | translate }}</th>
+      <th>{{ 'SEARCH.TASK_NAME' | translate }}</th>
+      <th>{{ 'SEARCH.DESCRIPTION' | translate }}</th>
+      <th>{{ 'SEARCH.TASK_ORDER' | translate }}</th>
+    </tr>
+    <tr
+      *ngFor="let task of (allTasks | searchTask: searchText); let i = index"
+      (click)="selectTaskBySearch(task)">
+        <td>{{ i + 1 }}</td>
+        <td>{{ task.title }}</td>
+        <td>{{ task.description }}</td>
+        <td>{{ task.order }}</td>
+    </tr>
+    <tr *ngIf="(allTasks | searchTask: searchText).length === 0">
+      <td colspan="4" style="text-align: center; height: 60px; color: #ff4081; font-weight: 500;">{{ 'SEARCH.MESSAGE' | translate }}</td>
+    </tr>
+  </table>
+</div>

@@ -30,9 +30,9 @@ export class BoardComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe((params) => {
       this.boardId = params['id'];
+      this.getBoard();
+      this.getColumns();
     });
-    this.getBoard();
-    this.getColumns();
   }
 
   private getColumns() {

@@ -2,7 +2,10 @@
   <mat-toolbar color="primary">
     <div class="container">
       <mat-toolbar color="primary" class="header__inner">
-        <img src="../../../../assets/logo.svg" alt="logo">
+        <a class="logo" [routerLink]="['/']">
+          <img src="../../../../assets/logo.svg" alt="logo">
+        </a>
+        <app-search *ngIf="isUserLogin() && seachVisibility"></app-search>
         <nav #navMenu class="nav">
           <a mat-button [routerLink]="['/']" routerLinkActive="active" (click)="openCloseMenu()" class="nav__link">{{ 'HOME.TITLE' | translate }} </a>
           <app-home-nav *ngIf="!isUserLogin()"></app-home-nav>
@@ -11,9 +14,6 @@
             <span>EN</span>
             <mat-slide-toggle [(ngModel)]="isChecked" (change)="setLanguage()"></mat-slide-toggle>
             <span>RU</span>
-            <!-- <select #langSelect (change)="translate.use(langSelect.value)">
-              <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
-            </select> -->
           </span>
         </nav>
         <button class="burger__menu" mat-icon-button (click)="openCloseMenu()">

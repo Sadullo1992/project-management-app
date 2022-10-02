@@ -66,9 +66,9 @@ export class BoardColumnComponent implements OnInit {
     this.editColumnForm.controls['columnTitle'].setValue(this.item.title);
     this.route.params.subscribe((params) => {
       this.boardId = params['id'];
+      this.getTasks();
+      this.getUsers();
     });
-    this.getTasks();
-    this.getUsers();
   }
 
   delete() {

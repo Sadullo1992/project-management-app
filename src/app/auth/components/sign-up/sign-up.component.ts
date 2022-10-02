@@ -14,6 +14,8 @@ declare let alertify: any;
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent {
+  hide = true;
+
   signUpForm: FormGroup = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
     login: ['', [Validators.required, Validators.minLength(3)]],
@@ -31,11 +33,10 @@ export class SignUpComponent {
             this.router.navigate(['/boards']);
             alertify.set('notifier','position', 'top-right');
             alertify.success('You are successfully authorized!');
+            this.signUpForm.reset();
+            ngForm.resetForm();
           });
       });
-
-      this.signUpForm.reset();
-      ngForm.resetForm();
   }
 
 }

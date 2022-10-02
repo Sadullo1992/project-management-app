@@ -1,4 +1,4 @@
-<div class="board__task">
+<div class="board__task" [attr.data-task]="task.id">
   <h4 class="board__task__title">{{ task.title }}</h4>
   <p class="board__task__desc">{{ task.description }}</p>
   <p class="board__task__owner">{{ 'BOARD.TASK_OWNER' | translate }} <span>{{ user?.name }}</span></p>

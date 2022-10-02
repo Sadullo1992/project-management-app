@@ -7,6 +7,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -21,6 +23,8 @@ import { ApiInterceptor } from './interceptors/api.interceptor';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { FormsModule } from '@angular/forms';
+import { SearchComponent } from './components/search/search.component';
+import { SearchTaskPipe } from './pipes/search-task.pipe';
 
 export function HttpLoaderFactory(httpClient: HttpClient) {
   return new TranslateHttpLoader(httpClient, '/assets/i18n/', '.json');
@@ -33,7 +37,9 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     HeaderComponent,
     FooterComponent,
     HomeNavComponent,
-    UserNavComponent
+    UserNavComponent,
+    SearchComponent,
+    SearchTaskPipe,
   ],
   imports: [
     RouterModule,
@@ -46,6 +52,8 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
     MatSlideToggleModule,
     MatCardModule,
     MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -71,7 +79,7 @@ export function HttpLoaderFactory(httpClient: HttpClient) {
       provide: HTTP_INTERCEPTORS,
       useClass: ApiInterceptor,
       multi: true,
-    }
+    },
   ]
 })
 export class CoreModule { }

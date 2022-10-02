@@ -12,10 +12,11 @@ declare let alertify: any;
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
+  hide = true;
 
   loginForm: FormGroup = this.fb.group({
     login: ['', [Validators.required, Validators.minLength(3)]],
-    password: ['', [Validators.required]]
+    password: ['', [Validators.required, passwordValidator]]
   });
 
   constructor(private authService: AuthService, private router: Router, private fb: FormBuilder) { }

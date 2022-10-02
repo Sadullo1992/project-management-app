@@ -57,5 +57,13 @@
     "CREATE_TASK": "Create New Task",
     "UPDATE_TASK": "Update Task",
     "TASK_OWNER": "Task owner:"
+  },
+  "SEARCH": {
+    "TITLE": "Search",
+    "NO": "No.",
+    "TASK_NAME": "Task Name",
+    "DESCRIPTION": "Description",
+    "TASK_ORDER": "Task Order",
+    "MESSAGE": "Sorry, we couldn't find any result!"
   }
 }

@@ -5,6 +5,9 @@ header {
   width: 100%;
   z-index: 2;
 }
+.logo img {
+  vertical-align: middle;
+}
 .header__inner {
   justify-content: space-between;
   padding: 0;

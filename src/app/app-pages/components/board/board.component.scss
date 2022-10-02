@@ -1,6 +1,7 @@
 .board {
   margin-top: 64px;
   padding: 8px 30px 0;
+  overflow: hidden;
   a {
     color: #29B6F6;
     font-size: 16px;
@@ -19,7 +20,7 @@
     display: flex;
     gap: 20px;
     flex-wrap: nowrap;
-    overflow-x: auto;
+    overflow-x: scroll;
     overflow-y: hidden;
   }
   &__column {
