@@ -9,7 +9,7 @@ This is a web application like kanban board that allows us to manage projects wo
 Installation:
 To build, download the files from the repository and install the dependencies use npm: npm install. After that, type 'npm run start' in console to run application in development mode, or 'npm run build' to get built bundle (appears in dist folder).
 
-Deployed version you can find [here](https://sadullo-project-management-app.netlify.app/).
+Deployed version you can find [here](https://project-management-app-eosin.vercel.app/).
 
 Backend repo: [kanban-rest](https://github.com/Sadullo1992/kanban-rest).
 Backend deploy: [https://murmuring-headland-53952.herokuapp.com/](https://murmuring-headland-53952.herokuapp.com/).
