@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'https://kanban-rest-7ov5.onrender.comm',
+  API_URL: 'https://murmuring-headland-53952.herokuapp.com/',
 };
 
 /*
